@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
-    char c;
+    int c;
 
-    printf ("Zadaj riadok: ");
-    do
+    //int premenna nepretecie, char ano
+    for (c = 0; c < 256; c++)
     {
-        scanf ("%c", &c);
-        printf ("%c ",c);
-    } while (c != '\n');
+        if ( isprint(c) )
+            printf ("%3d %02x %c\n", c, c, c);	//raz sa chape kod ako cislo, raz ako znak
+    }
+
     return 0;
 }
