@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 int main() {
-    printf("Hello world!\n");
+    char c;
+
+    printf ("Zadaj riadok: ");
+    do
+    {
+        scanf ("%c", &c);
+        printf ("%c ",c);
+    } while (c != '\n');
     return 0;
 }
