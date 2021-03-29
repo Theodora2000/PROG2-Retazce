@@ -1,15 +1,24 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-int main()
-{
-    char str1[] = "home";
-    char str2[] = "sweet";
-    if(strcmp(str1,str2)>0){
-        return 1;
 
-    } else if(strcmp(str1,str2)<0){
-        return -1;
-    }else{
-        return 0;
+int values[] = { 88, 56, 100, 2, 25 };
+
+
+int main () {
+    int n;
+
+    printf("Before sorting the list is: \n");
+    for( n = 0 ; n < 5; n++ ) {
+        printf("%d ", values[n]);
     }
+
+    qsort(values, 5, sizeof(int), strcmp);
+
+    printf("\nAfter sorting the list is: \n");
+    for( n = 0 ; n < 5; n++ ) {
+        printf("%d ", values[n]);
+    }
+
+    return(0);
 }
