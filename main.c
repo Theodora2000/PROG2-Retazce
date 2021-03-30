@@ -51,15 +51,67 @@ void Upisuj(char* string)
 
 }
 
+int* findNum(int* niz,int n,int br)
+{
+    int i=0;
+    int* setaj;
+    setaj=niz;
+    while(i<n)
+    {
+        if(*setaj==br)
+        {
+            return setaj;
+        }
+        setaj++;
+        i++;
+    }
+    return  NULL;
+
+}
+
+char* findChar(char* recenica, char c)
+{
+    char* setaj;
+    setaj=recenica;
+    int i=0;
+    while(*setaj!='\0')
+    {
+        if(*setaj==c)
+        {
+
+            return setaj;
+        }
+        setaj++;
+    }
+    return  NULL;
+}
+char* findCharLast(char* recenica, char c)
+{
+    char* setaj;
+    setaj=recenica;
+    char* returnVal;
+    returnVal=NULL;
+    int i=0;
+    while(*setaj!='\0')
+    {
+        if(*setaj==c)
+        {
+            returnVal=setaj;
+        }
+        setaj++;
+    }
+    return  returnVal;
+}
+
 int main () {
 
-    char string[MAX+1];
-    int niz[10];
-    //Upisuj(string);
+    char c='a';
+    char string[]="anabela";
 
-    printf("%s", string);
-    char string1[]="otec";
-    char string2[]="oted";
-    printf("%d",strCompare(string1,string2));
+    for(int i=0;i<strlen(string);i++){
+        if(string[i]==c){
+            printf("%d ",i);
+        }
+    }
     return 0;
 }
