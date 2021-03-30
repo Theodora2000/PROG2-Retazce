@@ -1,24 +1,65 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define MAX 10
 
-int values[] = { 88, 56, 100, 2, 25 };
+int strCompare(char* str1, char* str2)
+{
+    int index=0;
+    while(1>0)
+    {
+        if(str1[index]=='\0' && str2[index]=='\0')
+        {
+            return 0;
+        }
+        if(str1[index]!='\0' && str2[index]=='\0')
+        {
+            return 1;
+        }
+        if(str1[index]=='\0' && str2[index]!='\0')
+        {
+            return -1;
+        }
 
+        if(str1[index]<str2[index]){
+            return -1;
+        }
+        if(str1[index]>str2[index]){
+            return 1;
+        }
+        index++;
+
+    }
+}
+
+void Upisuj(char* string)
+{
+    int i;
+    char c;
+    for( i=0;i<MAX;i++)
+    {
+        c = (char)getchar();
+        if(c=='\n')
+        {
+
+            break;
+        }
+        fflush(stdin);
+        string[i]=c;
+    }
+    string[i]='\0';
+
+}
 
 int main () {
-    int n;
 
-    printf("Before sorting the list is: \n");
-    for( n = 0 ; n < 5; n++ ) {
-        printf("%d ", values[n]);
-    }
+    char string[MAX+1];
+    int niz[10];
+    //Upisuj(string);
 
-    qsort(values, 5, sizeof(int), strcmp);
-
-    printf("\nAfter sorting the list is: \n");
-    for( n = 0 ; n < 5; n++ ) {
-        printf("%d ", values[n]);
-    }
-
-    return(0);
+    printf("%s", string);
+    char string1[]="otec";
+    char string2[]="oted";
+    printf("%d",strCompare(string1,string2));
+    return 0;
 }
